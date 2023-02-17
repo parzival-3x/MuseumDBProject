@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-17T05:52:50.583Z" agent="5.0 (Windows)" etag="xmju1J3VGoaeyGRsgKMb" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-17T06:02:52.934Z" agent="5.0 (Windows)" etag="_PKJiFr8lpQThxIl2uvV" version="20.8.20" type="github">
   <diagram id="hE65RoLKXRJ-H_FZ36-S" name="Page-1">
     <mxGraphModel dx="759" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -260,7 +260,7 @@
             <mxPoint x="650" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLmWBADTlYXgiT_7GT_r-18" value="Hours spent in museum" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ZLmWBADTlYXgiT_7GT_r-18" value="Hours spent in the museum" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="670" y="460" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZLmWBADTlYXgiT_7GT_r-19" value="" style="endArrow=none;html=1;curved=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZLmWBADTlYXgiT_7GT_r-13" target="ZLmWBADTlYXgiT_7GT_r-18" edge="1">
@@ -290,7 +290,7 @@
         <mxCell id="ZLmWBADTlYXgiT_7GT_r-26" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="540" y="250" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLmWBADTlYXgiT_7GT_r-27" value="&lt;div&gt;Is a member&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ZLmWBADTlYXgiT_7GT_r-27" value="&lt;div&gt;Is a Member&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="540" y="460" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZLmWBADTlYXgiT_7GT_r-28" value="" style="endArrow=none;html=1;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ZLmWBADTlYXgiT_7GT_r-27" target="ZLmWBADTlYXgiT_7GT_r-13" edge="1">
