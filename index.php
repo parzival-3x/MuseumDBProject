@@ -40,7 +40,7 @@
                 <a class="nav-link" href="#">Gift Shop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Donations.php">Donations</a>
+                <a class="nav-link" href="donations.php">Donations</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Restaraunt</a>
