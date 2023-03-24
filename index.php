@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>MFAH</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="/img/museumImageURL.png" type="image/x-icon">
   </head>
   <header class="myheader">
     <div class="row">
@@ -31,7 +32,7 @@
                 <a class="nav-link" href="#">Calendar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Films</a>
+                <a class="nav-link" href="movies.php">Films</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Tours</a>
@@ -50,6 +51,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Visit us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Parking Pass</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Log in</a>
