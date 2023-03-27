@@ -51,7 +51,7 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="movies.php">Films</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tours</a>
+                <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Gift Shop</a>
@@ -63,13 +63,13 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="#">Restaraunt</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact us</a>
+                <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="visitus.php">Visit us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Parking Pass</a>
+                <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
@@ -171,5 +171,21 @@ if (isset($_SESSION['email'])) {
         dots[slideIndex-1].className += " active";
       }
     </script>
+    <hr/>
+  <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
   </body>
 </html>

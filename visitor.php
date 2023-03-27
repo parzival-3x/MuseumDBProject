@@ -35,39 +35,39 @@ if (isset($_SESSION['email']))
         background-color: #ddd;
       }
    
-		.myheader {
+		.myheader {/**/
   background-color: #dc4a38;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
-.row {
+.row {/**/
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar {
+.navbar {/**/
   display: flex;
   align-items: center;
 }
 
-.navbar-nav {
+.navbar-nav {/**/
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-.navbar-nav li {
+.navbar-nav li {/**/
   margin-left: 20px;
 }
 
-.navbar-nav li:first-child {
+.navbar-nav li:first-child {/**/
   margin-left: 0;
 }
 
-.navbar-nav a {
+.navbar-nav a {/**/
   color: #000;
   text-decoration: none;
   font-weight: bold;
@@ -75,7 +75,7 @@ if (isset($_SESSION['email']))
   transition: color 0.3s ease;
 }
 
-.navbar-nav a:hover {
+.navbar-nav a:hover {/**/
   color: #fff;
 }
 
@@ -136,25 +136,28 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="movies.php">Films</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Tours</a>
+                  <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Gift Shop</a>
+                  <a class="nav-link" href="#">Gift Shop</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Donations</a>
+                  <a class="nav-link" href="#">Donations</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Restaraunt</a>
+                  <a class="nav-link" href="#">Restaraunt</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Contact us</a>
+                  <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="visitus.php">Visit us</a>
+                  <a class="nav-link" href="visitus.php">Visit us</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
+                  <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
                 </li>
             </ul>
             </div>
@@ -226,6 +229,18 @@ if (isset($_SESSION['email'])) {
 .input[type="checkbox"]:checked {
   border-color: #dc4a38;
   background-color: #dc4a38;
+}
+.social-media {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
 }
 
 	</style>
@@ -355,6 +370,22 @@ $email=$_SESSION['email'];
 ?>
 
      <a href="logout.php">Logout</a>
+     <hr/>
+  <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
 

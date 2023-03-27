@@ -3,6 +3,7 @@
 <head>
 	<title>LOGIN</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="/img/museumImageURL.png" type="image/x-icon">
 </head>
 <body>
 <style>
@@ -119,6 +120,18 @@
    border-radius: 5px;
    margin: 20px auto;
 }
+.social-media {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
 
 
 
@@ -157,25 +170,28 @@ if (session_status() == PHP_SESSION_NONE) {
                 <a class="nav-link" href="movies.php">Films</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Tours</a>
+                  <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Gift Shop</a>
+                  <a class="nav-link" href="#">Gift Shop</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Donations</a>
+                  <a class="nav-link" href="#">Donations</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Restaraunt</a>
+                  <a class="nav-link" href="#">Restaraunt</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Contact us</a>
+                  <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="visitus.php">Visit us</a>
+                  <a class="nav-link" href="visitus.php">Visit us</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="loginp.php">Log in</a>
+                  <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
                 </li>
             </ul>
             </div>
@@ -197,6 +213,22 @@ if (session_status() == PHP_SESSION_NONE) {
 
      	<button type="submit">Login</button>
      </form>
+     <hr/>
+  <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>
