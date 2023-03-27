@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+  
+  header {
+    background-color: white;
+    color: black;
+    text-align: center;
+  }
+  
+  .logo-container {
+    max-width: 200px;
+    margin: 1rem auto;
+  }
+  
+  .logo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .myheader{
+    background-color: #dc4a38;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .help{
+    width: 100%;
+    height: 35px;
+  }
+  .column{
+    margin-top: 58px;
+    width: 100%;
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+  }
+  .navbar-nav{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  }
+  
+  .navbar-nav li {/**/
+  margin-left: 20px;
+  }
+  
+  .navbar-nav li:first-child {/**/
+  margin-left: 0;
+  }
+  
+  .navbar-nav a {/**/
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  }
+  
+  .navbar-nav a:hover {/**/
+  color: #fff;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .intro, .tour-options, .booking {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .tour-options {
+    position: relative;
+    /*top: -100px;*/
+  }
+
+  .booking {
+    position: relative;
+    /*top: -100px;*/
+  }
+  
+  .intro p {
+    position: relative;
+    /*top: -50px;*/
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tour-options p {
+    margin-top: 1px;
+  }
+  
+  footer p {
+    margin: 0;
+    text-align: center;
+  }
+  
+  footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+  }
+  
+  .social-media {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .booking img {
+    float: left;
+    margin-right: 10px;
+  }
