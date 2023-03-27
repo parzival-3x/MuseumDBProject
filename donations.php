@@ -13,7 +13,7 @@
         <?php include 'header.php'; ?>  
         <main>
             <div id="donationform">
-                <form action="https://httpbin.org/get" method="get">
+                <form name="dnfrm" method="post" action="donationinsert.php">
                 <!--At the moment i'm not really sure what to do with the action field. Eventually it'll insert the data here into the sql server right?-->
                     <fieldset>
                         <legend>Donation Form</legend>
