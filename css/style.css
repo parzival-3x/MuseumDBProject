@@ -1,11 +1,14 @@
 .row{
-    width:100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .myheader{
-    display: inline-block;
+    /*display: inline-block;
+    background-color: #dc4a38;*/
     background-color: #dc4a38;
-    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*padding: 20px;*/
 }
 .help{
     width: 100%;
@@ -16,23 +19,48 @@
     width: 100%;
 }
 .navbar{
-    display: inline-block;
+    /*display: inline-block;
     margin-bottom: 0px;
-    width: 100%;
+    width: 100%;*/
+    display: flex;
+    align-items: center;
 }
 .navbar-nav{
-  padding: 0;
+  /*padding: 0;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  width: 100%;
+  width: 100%;*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
-.nav-item{
+/*.nav-item{
   background-color: rgb(188, 187, 184);
   display:inline-block;
   margin-top: 7px;
   padding: 5px;
   border-radius: 10px;
+}*/
+.navbar-nav li {/**/
+  margin-left: 20px;
+}
+
+.navbar-nav li:first-child {/**/
+  margin-left: 0;
+}
+
+.navbar-nav a {/**/
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {/**/
+  color: #fff;
 }
 
 * {box-sizing:border-box}
