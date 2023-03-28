@@ -161,7 +161,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <a class="nav-link" href="#">Tickets</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Exhibits</a>
+                <a class="nav-link" href="exhibits.php">Exhibits</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="calendar.php">Calendar</a>
@@ -179,7 +179,7 @@ if (session_status() == PHP_SESSION_NONE) {
                   <a class="nav-link" href="donations.php">Donations</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Restaraunt</a>
+                  <a class="nav-link" href="restaurants.php">Restaraunt</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>

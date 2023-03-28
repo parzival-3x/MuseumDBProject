@@ -7,14 +7,77 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <header class="myheader">
-        <div class="row">
-            <a href="index.php">
-                <button type="button">
-                    <img src="/img/MFAHlogo.png" height="100" alt="logo">
-                </button>
-            </a>
-        </div>
-    </header>
+    <div class="row">
+      <a href="index.php">
+        <button type="button">
+          <img src="/img/MFAHlogo.png" height="100" alt="logo">
+        </button>
+      </a>
+      <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
+		<?php
+		
+if (isset($_SESSION['email'])) {
+  $link_text = 'My Account';
+  $link_href = 'visitor.php';
+} else {
+  $link_text = 'Login';
+  $link_href = 'loginp.php';
+}
+?>
+      <div class="column">
+        <nav class="navbar">
+          <div class="help" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tickets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exhibits.php">Exhibits</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="calendar.php">Calendar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="movies.php">Films</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="giftshop.php">Gift Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="donations.php">Donations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="restaurants.php">Restaraunt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="visitus.php">Visit us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
     <body>
             <?php
                 $servername = "34.30.147.150";
@@ -28,7 +91,7 @@
                 die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = 'SELECT Restaurant_name, Hours_of_service FROM RESTURANTS';
+                $sql = 'SELECT Restaurant_name, Hours_of_service FROM RESTAURANT';//RESTAURANT
                 $result =  $conn->query($sql);
                 $rest = $result->fetch_all(MYSQLI_ASSOC);
                 if (count($rest) > 0)
@@ -36,13 +99,13 @@
                     echo '<div class="tab">';
                     foreach ($rest as $rest)
                     {
-                        echo '<button class="tablinks" onclick="openRestaurant(event,' .$rest["Restaurant_name"]. ')">' .$rname["Restaurant_name"]. '</button>';
+                        echo '<button class="tablinks" onclick="openRestaurant(event,' .$rest["Restaurant_name"]. ')">' .$rest["Restaurant_name"]. '</button>';
                     }
                     echo '</div>';
 
-                    echo '<div id=' .$rest[0]. 'class="tabcontent">
-                            <h3>' .$rest[0]. '</h3>
-                            <p>Service Hours:' .$rest[1]. '</p>
+                    echo '<div id=' .$rest["Restaurant_name"]. 'class="tabcontent">
+                            <h3>' .$rest["Restaurant_name"]. '</h3>
+                            <p>Service Hours: ' .date('g:i a',strtotime($rest["Hours_of_service"])) . ' to '.date('g:i a',strtotime($rest["Hours_of_service"].'+ 510 minute')).'</p>
                             <h4>BREAKFAST</h4>
                             Pain Au Chocolate $4 <br>
                             Cornetto $4 <br>
@@ -228,10 +291,7 @@
                             SEASONAL FLAVORS (OPTIONS MAY VARY)</p>
                           </div>';
 
-                    echo '<div id=' .$rest[3]. 'class="tabcontent">
-                            <h3>' .$rest[3]. '</h3>
-                            <p>Service Hours:' .$rest[4]. '</p>
-                            <h4>LUNCH À LA CARTE</h4>
+                    echo '  <h4>LUNCH À LA CARTE</h4>
                             <p>MUSHROOM VELOUTE, PARSLEY FOAM, HAZELNUTS, PARMESAN CROUTON <br>
                             WINTER TARTINE, LOBSTER, DEVILED EGG, AVOCADO, SHAVED VEGETABLE, <br>
                             MURRAY\'S BURRATA, PECAN GREMOLATA, APPLE COMPOTE, RED WINE POACHED PEARS <br>
@@ -413,5 +473,20 @@
                 // Get the element with id="defaultOpen" and click on it
                 document.getElementById("defaultOpen").click();
             </script>
+            <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
     </body>
 </html>
