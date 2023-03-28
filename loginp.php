@@ -164,19 +164,19 @@ if (session_status() == PHP_SESSION_NONE) {
                 <a class="nav-link" href="#">Exhibits</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="calendar.php">Calendar</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="movies.php">Films</a>
+                  <a class="nav-link" href="movies.php">Films</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Gift Shop</a>
+                  <a class="nav-link" href="giftshop.php">Gift Shop</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Donations</a>
+                  <a class="nav-link" href="donations.php">Donations</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Restaraunt</a>
@@ -191,7 +191,7 @@ if (session_status() == PHP_SESSION_NONE) {
                   <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
+                  <a class="nav-link" href="loginp.php">Login</a>
                 </li>
             </ul>
             </div>

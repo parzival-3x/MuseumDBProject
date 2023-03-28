@@ -45,7 +45,7 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="#">Exhibits</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="calendar.php">Calendar</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="movies.php">Films</a>
@@ -54,10 +54,10 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="Tours Page/Tours/index.html">Tours</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Gift Shop</a>
+                <a class="nav-link" href="giftshop.php">Gift Shop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Donations</a>
+                <a class="nav-link" href="donations.php">Donations</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Restaraunt</a>

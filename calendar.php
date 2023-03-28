@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="author" content="Taylor Rogers">
         <meta name="description" content ="This shows the calendar">
-        <link rel="icon" href="museumImageURL.png" type="image/x-icon">
+        <link rel="icon" href="img/museumImageURL.png" type="image/x-icon">
         <link rel="stylesheet" href="calendar.css" type="text/css">
         <title>Calendar Page</title>
     </head>
@@ -34,7 +34,7 @@
                         );
                     }
                 }
-
+                //add the month on top ffs
                 // Generate calendar HTML
                 $calendar = '<table>';
                 $calendar .= '<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>';
@@ -68,6 +68,21 @@
                 ?>
         </div>
         </main>
+        <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
     </body>
 
     

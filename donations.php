@@ -5,7 +5,7 @@
         <meta name="author" content="Taylor Rogers">
         <meta name="description" content ="This allows for a donation to be
         made to the museum, it does not display prior donations">
-        <link rel="icon" href="museumImageURL.png" type="image/x-icon">
+        <link rel="icon" href="img/museumImageURL.png" type="image/x-icon">
         <link rel="stylesheet" href="donations.css" type="text/css">
         <title>Donations Page</title>
     </head>
@@ -61,6 +61,21 @@
                 </form>
             </div>
         </main>
+        <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
     </body>
 
     

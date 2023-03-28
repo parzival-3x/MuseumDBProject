@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="author" content="Taylor Rogers">
         <meta name="description" content ="This queries the giftshop in sql and displays the table, dynamically showing images for each item.">
-        <link rel="icon" href="museumImageURL.png" type="image/x-icon">
+        <link rel="icon" href="img/museumImageURL.png" type="image/x-icon">
         <link rel="stylesheet" href="giftshop.css" type="text/css">
         <title>Gift Shop Page</title>
     </head>
@@ -50,6 +50,21 @@
                     ?>
             </div>
         </main>
+        <footer>
+    <div class="social-media">
+      <p>
+        Follow us on:
+        <a href="https://www.facebook.com/MFAHouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/MFAH">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-512.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/mfahouston/">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png" alt="Instagram"/></a>
+        <a href="https://vimeo.com/mfahouston">
+          <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
+      </p>
+    </div>
+  </footer>
     </body>
 
     
