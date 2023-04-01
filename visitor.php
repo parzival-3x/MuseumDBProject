@@ -1,9 +1,21 @@
-<?php 
-session_start();
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
+  //ini_set('session.gc_probability', 1);
+  session_start(); 
+}
 include "db_conn.php";
-if (isset($_SESSION['email']))
+?>
 
- ?>
+		<?php
+if (isset($_SESSION['email'])) {
+  $link_text = 'My Account';
+  $link_href = 'visitor.php';
+} else {
+  $link_text = 'Login';
+  $link_href = 'loginp.php';
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,21 +112,6 @@ if (isset($_SESSION['email']))
             <img src="/img/MFAHlogo.png" height="100" alt="logo">
         </button>
         </a>
-		<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-		<?php
-if (isset($_SESSION['email'])) {
-  $link_text = 'My Account';
-  $link_href = 'visitor.php';
-} else {
-  $link_text = 'Login';
-  $link_href = 'loginp.php';
-}
-?>
 
         <div class="column">
         <nav class="navbar">
@@ -248,14 +245,14 @@ footer img {
 
 	 
 $email = $_SESSION['email'];
-$sql = "SELECT zip_code FROM visitors WHERE email = '$email'";
+$sql = "SELECT Zip_Code FROM VISITORS WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
 
 // Check if there is a result
 if (mysqli_num_rows($result) > 0) {
     // Output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        $zip_code = $row["zip_code"];
+        $zip_code = $row["Zip_Code"];
     }
 } else {
     echo "0 results";
@@ -271,7 +268,7 @@ if (mysqli_num_rows($result) > 0) {
 	 
 $email = $_SESSION['email'];
 // Query visitors table for visitor with matching email
-$sql = "SELECT payment_status FROM visitors WHERE email='$email'";
+$sql = "SELECT payment_status FROM VISITORS WHERE email='$email'";
 $result = $conn->query($sql);
 
 // Display payment status if visitor found
@@ -285,7 +282,7 @@ if ($result->num_rows > 0) {
 }
 
 // Query visitors table for visitor with matching email
-	$sql = "SELECT payment_status, is_member FROM visitors WHERE email='$email'";
+	$sql = "SELECT payment_status, is_member FROM VISITORS WHERE email='$email'";
 	$result = $conn->query($sql);
 
 	// Display payment status and membership checkbox for visitor
@@ -354,7 +351,7 @@ $is_member_new = $_POST["is_member"];
 	 
 $email=$_SESSION['email'];
 	// Query the database for some rows
-	$sql = "SELECT License_Plate, PPDate, PDuration FROM parking_pass WHERE Visitor_Email='$email'";
+	$sql = "SELECT License_Plate, PPDate, PDuration FROM PARKING_PASS WHERE Visitor_Email='$email'";
 	$result = $conn->query($sql);
 
 	// Output the rows in an HTML table

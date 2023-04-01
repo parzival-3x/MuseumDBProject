@@ -1,4 +1,5 @@
 <?php 
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
 session_start(); 
 include "db_conn.php";
 
@@ -21,20 +22,20 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         header("Location: loginp.php?error=Password is required");
 	    exit();
 	}else{
-		$sql = "SELECT * FROM Visitors WHERE Email='$uname' AND Password='$pass'";
+		$sql = "SELECT * FROM VISITORS WHERE Email='$uname' AND Password='$pass'";
 
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['email'] === $uname && $row['password'] === $pass) {
-            	$_SESSION['email'] = $row['email'];
+            if ($row['Email'] === $uname && $row['Password'] === $pass) {
+            	$_SESSION['email'] = $row['Email'];
             	//$_SESSION['name'] = $row['name'];
             	//$_SESSION['id'] = $row['id'];
             	header("Location: visitor.php");
 		        exit();
             }else{
-				header("Location: loginp.php?error=Incorect User name or password");
+				header("Location: loginp.php?error=Incorect User name or password inner");
 		        exit();
 			}
 		}else{

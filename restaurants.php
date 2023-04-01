@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>MFAH</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-    </head>
-    <header class="myheader">
-    <div class="row">
-      <a href="index.php">
-        <button type="button">
-          <img src="/img/MFAHlogo.png" height="100" alt="logo">
-        </button>
-      </a>
-      <?php
+<?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -29,6 +14,21 @@ if (isset($_SESSION['email'])) {
   $link_href = 'loginp.php';
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MFAH</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <header class="myheader">
+    <div class="row">
+      <a href="index.php">
+        <button type="button">
+          <img src="/img/MFAHlogo.png" height="100" alt="logo">
+        </button>
+      </a>
       <div class="column">
         <nav class="navbar">
           <div class="help" id="navbarNav">

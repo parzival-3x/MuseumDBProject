@@ -1,3 +1,19 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
+		<?php
+		
+if (isset($_SESSION['email'])) {
+  $link_text = 'My Account';
+  $link_href = 'visitor.php';
+} else {
+  $link_text = 'Login';
+  $link_href = 'loginp.php';
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,22 +31,6 @@
           <img src="/img/MFAHlogo.png" height="100" alt="logo">
         </button>
       </a>
-      <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-		<?php
-		
-if (isset($_SESSION['email'])) {
-  $link_text = 'My Account';
-  $link_href = 'visitor.php';
-} else {
-  $link_text = 'Login';
-  $link_href = 'loginp.php';
-}
-?>
       <div class="column">
         <nav class="navbar">
           <div class="help" id="navbarNav">

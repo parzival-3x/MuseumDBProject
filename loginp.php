@@ -1,3 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
+  session_start(); 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -136,11 +142,7 @@ footer img {
 
 
 </style>
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
+
 
 <header class="myheader">
     <div class="row">
