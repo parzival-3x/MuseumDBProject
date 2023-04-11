@@ -10,7 +10,7 @@ include "db_conn.php";
 		<?php
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
-  $link_href = 'visitor.php';
+  $link_href = 'manager.php';
 } else {
   $link_text = 'Login';
   $link_href = 'loginp.php';

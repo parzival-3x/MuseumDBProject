@@ -68,3 +68,54 @@ if (isset($_SESSION['email'])) {
         </div>
     </div>
 </header>
+<?php
+/*print php_ini_loaded_file();
+print_r(php_ini_scanned_files());
+$name="";
+if(isset($_POST['submit'])){
+//if($_SERVER['REQUEST_METHOD']=="POST"){
+        $name       = $_FILES['file']['name'];
+        $temp_name  = $_FILES['file']['tmp_name'];
+        if(isset($name) and !empty($name)){
+            $location = './Save_Files/';
+            if(move_uploaded_file($temp_name, $location.$name)){
+                echo 'File uploaded successfully';
+            }
+        } else {
+            echo 'You should select a file to upload !!';
+        }
+    }
+//uploads should be Save_Files
+//$position= strpos($name, ".");
+
+//$fileextension= strtolower($fileextension);
+
+$league= $_POST['league'];
+$team= $_POST['team'];
+$season= $_POST['season'];
+$description= $_POST['description'];
+
+
+$user = "root";
+$password = "";
+$host = "127.0.0.1";
+$dbase = "game_form";
+$table = "saves";
+
+
+$connection= mysqli_connect ($host, $user, $password, $dbase);
+if (!$connection)
+{
+die ('Could not connect:' . mysql_error());
+}
+mysqli_select_db($connection, $dbase);
+
+
+if(!empty($description)){
+mysqli_query($connection, "INSERT INTO $table (description, filename, league, team, season)
+VALUES ('$description', '$name', '$league', '$team', '$season')");
+}
+
+
+mysqli_close($connection);*/
+?>

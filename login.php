@@ -28,17 +28,25 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['Email'] === $uname && $row['Password'] === $pass) {
-            	$_SESSION['email'] = $row['Email'];
-            	//$_SESSION['name'] = $row['name'];
-            	//$_SESSION['id'] = $row['id'];
-            	header("Location: visitor.php");
-		        exit();
-            }else{
-				header("Location: loginp.php?error=Incorect User name or password inner");
-		        exit();
+			$_SESSION['email'] = $row['Email'];
+			header("Location: visitor.php");
+		    exit();
+		}
+		else if(str_contains($uname,"@mfah.org")){
+			$manquery = "SELECT * FROM MANAGER WHERE Email='$uname' AND Password='$pass'";
+			$manresult = mysqli_query($conn,$manquery);
+			if(mysqli_num_rows($manresult)===1){//manager@mfah.org qsxcgy$45
+				$row = mysqli_fetch_assoc($manresult);
+				$_SESSION['email'] = $row['Email'];
+				header("Location: manager.php");
+				exit();
 			}
-		}else{
+			else{
+				header("Location: loginp.php?error=Incorect manager User name or password");
+				exit();
+			}
+		}
+		else{
 			header("Location: loginp.php?error=Incorect User name or password");
 	        exit();
 		}
