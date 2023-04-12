@@ -4,8 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ?>
 
-		<?php
-		
+<?php
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
   $link_href = 'visitor.php';
@@ -102,7 +101,7 @@ if (isset($_SESSION['email'])) {
                 {
                     echo '<h2>' .$e["Name"]. '</h2>';
                     echo '<p>' .$e["Description"]. '</p>';
-                    echo 'Located at ' .$e["Location"]. 'From ' .$e["Start_Date"]. 'to ' .$e["End_Date"]. '<br>';
+                    echo 'Located at ' .$e["Location"]. '<br>From ' .$e["Start_Date"]. ' to ' .$e["End_Date"]. '<br>';
                     echo '<div class="grid-container">';
 
                     $eID = $e["Exhibit_ID"];
@@ -113,8 +112,8 @@ if (isset($_SESSION['email'])) {
                     {
                         while ($row = $result->fetch_assoc())
                         {
-                            echo '<div class="grid-item"><img src></div>"';
-                            echo '<div class="grid-item">' .$row["Creator_Name"].'<br>' .$row["Name"].'<br>' .$row["Creation_Date"].'<br>' .$row["Description"].'<br>' .$row["Date_of_display"].'<br>' .$row["Artwork_ID"]. '</div>';
+                            echo '<div class="grid-item"><img src="' .$row["Picture"]. '"></div>';
+                            echo '<div class="grid-item">' .$row["Creator_Name"]. '<br>' .$row["Name"]. '<br>' .$row["Creation_Date"]. '<br>' .$row["Description"]. '<br>' .$row["Date_of_display"]. '<br>' .$row["Artwork_ID"]. '</div>';
                         }
                     }
                     else

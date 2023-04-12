@@ -7,14 +7,74 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="https://static-a.eventive.org/16c13fdf9df8cc70eab81095eed477bd.png" alt="The Museum of Fine Arts, Houston" width="150" height="150">
+<?php
+if (isset($_SESSION['email'])) {
+  $link_text = 'My Account';
+  $link_href = 'visitor.php';
+} else {
+  $link_text = 'Login';
+  $link_href = 'loginp.php';
+} 
+?>
+  <header class="myheader">
+    <div class="row">
+        <a href="../index.php">
+        <button type="button">
+            <img src="/img/MFAHlogo.png" height="110" alt="logo">
+        </button>
+        </a>
+
+        <div class="column">
+        <nav class="navbar">
+            <div class="help" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="../index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Tickets</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../exhibits.php">Exhibits</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../calendar.php">Calendar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../movies.php">Films</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../Tours Page/Tours/index.html">Tours</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../giftshop.php">Gift Shop</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../donations.php">Donations</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../restaurants.php">Restaraunt</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../visitus.php">Visit us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../Parking Page/index.html">Parking Pass</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../loginp.php">Log in</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        </div>
     </div>
-    <h1>Tickets</h1>
-    <hr/>
-  </header>
+</header>
 <main>
+  <h1>Tickets</h1>
     <section class="intro">
         <p><strong>No Need to Pay General Admission If . . .&nbsp;</strong></p>
         <p>&bull; You are visiting on a Thursday, when general admission is free for everyone, courtesy of Shell Oil Company.&nbsp;<em>Ticketed exhibitions are separate from general admission and remain ticketed on Thursdays</em>.</p>

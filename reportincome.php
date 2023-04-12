@@ -11,6 +11,17 @@
 <body>
 <div class = "ReportIncome">
 	<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
+        session_start();  
+      }
+    if (isset($_SESSION['email'])) {
+        $link_text = 'My Account';
+        $link_href = 'manager.php';
+      } else {
+        $link_text = 'Login';
+        $link_href = 'loginp.php';
+      }
 	include 'header.php';
 
 	$con = mysqli_connect('34.30.147.150', 'Taylor', 'thenumber1','museum');
@@ -32,7 +43,14 @@
 
     $row1 = mysqli_fetch_assoc($rs);
 
-    $sumgift = $row1['sum'];
+    $sumgift = $row1['SUM(Income_from_gift_shop)'];
+
+    echo "Total Gross Gift Shop Income: $";
+
+    echo $sumgift;
+
+    echo '.00';
+    echo "</br>";  
 	
     $sql = "SELECT SUM(Income_from_donations) FROM DONATIONS";
 	
@@ -45,7 +63,14 @@
 
     $row2 = mysqli_fetch_assoc($rs);
 
-    $sumdonations = $row2['sum'];
+    $sumdonations = $row2['SUM(Income_from_donations)'];
+
+    echo "Total Gross Donations Income: $";
+
+    echo $sumdonations;
+
+    echo '.00';
+    echo "</br>";  
 
     $sql = "SELECT SUM(Income_from_restaurant) FROM RESTAURANT";
 	
@@ -58,7 +83,14 @@
 
     $row3 = mysqli_fetch_assoc($rs);
 
-    $sumrestaurant = $row3['sum'];
+    echo "Total Gross Restaurant Income: $";
+
+    $sumrestaurant = $row3['SUM(Income_from_restaurant)'];
+
+    echo $sumrestaurant;
+
+    echo '.00';
+    echo "</br>";  
 
     $sql = "SELECT SUM(Income_from_parking_per_week) FROM PARKING";
 	
@@ -71,7 +103,14 @@
 
     $row4 = mysqli_fetch_assoc($rs);
 
-    $sumparking = $row4['sum'];
+    $sumparking = $row4['SUM(Income_from_parking_per_week)'];
+
+    echo "Total Gross Parking Income: $";
+
+    echo $sumparking;
+
+    echo '.00';
+    echo "</br>";  
 
     $sumtotal = $sumgift + $sumdonations + $sumrestaurant + $sumparking;
 

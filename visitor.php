@@ -5,12 +5,10 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start(); 
 }
 include "db_conn.php";
-?>
 
-		<?php
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
-  $link_href = 'manager.php';
+  $link_href = 'visitor.php';
 } else {
   $link_text = 'Login';
   $link_href = 'loginp.php';
@@ -20,6 +18,7 @@ if (isset($_SESSION['email'])) {
 <html>
 <head>
 	<title>HOME</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css"><!--
 	  <style>
       able {
         border-collapse: collapse;
@@ -47,39 +46,39 @@ if (isset($_SESSION['email'])) {
         background-color: #ddd;
       }
    
-		.myheader {/**/
+		.myheader {
   background-color: #dc4a38;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
-.row {/**/
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar {/**/
+.navbar {
   display: flex;
   align-items: center;
 }
 
-.navbar-nav {/**/
+.navbar-nav {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-.navbar-nav li {/**/
+.navbar-nav li {
   margin-left: 20px;
 }
 
-.navbar-nav li:first-child {/**/
+.navbar-nav li:first-child {
   margin-left: 0;
 }
 
-.navbar-nav a {/**/
+.navbar-nav a {
   color: #000;
   text-decoration: none;
   font-weight: bold;
@@ -87,7 +86,7 @@ if (isset($_SESSION['email'])) {
   transition: color 0.3s ease;
 }
 
-.navbar-nav a:hover {/**/
+.navbar-nav a:hover {
   color: #fff;
 }
 
@@ -103,8 +102,8 @@ if (isset($_SESSION['email'])) {
 
 
 </style>
-</head>
-<body>
+--></head>
+<body><!--
 <header class="myheader">
     <div class="row">
         <a href="index.php">
@@ -162,7 +161,8 @@ if (isset($_SESSION['email'])) {
         </div>
     </div>
 </header>
-
+-->
+<?php include 'header.php'; ?> 
 
      <h1>Hello, <?php echo $_SESSION['email']; ?></h1>
 	
@@ -192,7 +192,7 @@ if (isset($_SESSION['email'])) {
 
 		button {
 			padding: 10px;
-			background-color: blue;
+			/*background-color: blue;*/
 			color: white;
 			font-size: 20px;
 			border-radius: 5px;
@@ -261,7 +261,7 @@ if (mysqli_num_rows($result) > 0) {
 <form action="" method="post">
   <label for="zip_code">Zip Code:</label>
   <input type="text" id="zip_code" name="zip_code" value="<?php echo $zip_code; ?>">
-  <button type="submit" name="updatez">Update</button>
+  <button type="submit" name="updatez" style="background-color: blue;">Update</button>
 </form>
 <?php
 
@@ -321,7 +321,7 @@ if(isset($_POST['updatez'])) {
     $new_zip_code = $_POST['zip_code'];
     
     // Update the zip code in the database
-    $sql = "UPDATE visitors SET zip_code='$new_zip_code' WHERE email='$email'";
+    $sql = "UPDATE VISITORS SET zip_code='$new_zip_code' WHERE email='$email'";
     if (mysqli_query($conn, $sql)) {
         echo "Zip code updated successfully";
 		 $zip_code = $new_zip_code;
@@ -336,7 +336,7 @@ if(isset($_POST['updatez'])) {
 if(isset($_POST['updatem'])) {
 
 $is_member_new = $_POST["is_member"];
-	    $sql = "UPDATE visitors SET is_member='$is_member_new' WHERE email='$email'";
+	    $sql = "UPDATE VISITORS SET is_member='$is_member_new' WHERE email='$email'";
 	    if ($conn->query($sql) === TRUE) {
 	        echo "Membership updated successfully";
 			$is_member=$is_member_new;

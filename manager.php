@@ -74,7 +74,7 @@ if (isset($_SESSION['email'])) {
       <input type="text" id="Event_Name" name="Event_Name">
       <button type="submit" name="deleteCalendar">Delete</button>
     </form>
-    <p>Add, edit, and delete exhibits^</p>
+    <p>Add, edit, and delete exhibits</p>
     <form action="insert.php" method="post">
       <label for="Exhibit_ID">Exhibit ID:</label><!--Exhibit_ID| int| NO -->
       <input type="number" id="Exhibit_ID" name="Exhibit_ID" min="1" max="100">
@@ -96,7 +96,7 @@ if (isset($_SESSION['email'])) {
       <button type="submit" name="updateExhibits">Update</button>
     </form>
     <p>Add, edit, and delete gift shop</p>
-    <form action="insert.php" method="post">
+    <form action="insert.php" method="post" enctype="multipart/form-data">
       <!--Item_ID| int| NO| PRI| NULL| auto_increment -->
       <label for="Product_amt">Number of items in stock:</label><!--Product_amt| int| NO -->
       <input type="number" id="Product_amt" name="Product_amt" min="1">
@@ -104,6 +104,8 @@ if (isset($_SESSION['email'])) {
       <input type="text" id="Product_name" name="Product_name">
       <label for="Item_Cost">Item cost:</label><!--Item_Cost| int| NO -->
       <input type="number" id="Item_Cost" name="Item_Cost" min="1">
+      <label for="Picture">Upload a picture:</label><!--extranous -->
+      <input type="file"name="Picture" id="Picture">
       <button type="submit" name="updateGiftShop">Update</button>
     </form>
     <p>Add, edit, and delete movies</p>
@@ -128,9 +130,9 @@ if (isset($_SESSION['email'])) {
       <div id="FormFields" style="margin: 20px 0px;"></div>
       <button type="submit" name="updateMovies">Update</button>
     </form>
-    <a href="#">Make an income report</a><br/>
-    <a href="#">Make a visitor report</a><br/>
-    <a href="#">Make a gift shop report</a>
+    <a href="reportincome.php">Make an income report</a><br/>
+    <a href="AgeReport.php">Make a visitor report</a><br/>
+    <a href="giftshopreport.php">Make a gift shop report</a>
     <p></p>
     <p></p>
     <footer>
