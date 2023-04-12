@@ -134,14 +134,30 @@ button[type="submit"]:hover {
 }
 
 .pay-button {
-  position: absolute;
-  margin-bottom: -100px;
-  margin-left: -5px;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+  text-align: center;
+  width: 100%;
 }
 
-#payment-form label[for="expiry-input"] {
-  margin-left: 200px;
-  margin-bottom: 0px;
+
+#payment-form label[for="expiry-input"], #payment-form label[for="cvv-input"] {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 150px;
+}
+
+#payment-form br {
+  margin-bottom: 1rem;
 }
 
 .hidden {
@@ -166,4 +182,3 @@ footer img {
   justify-content: space-between;
   align-items: center;
 }
-
