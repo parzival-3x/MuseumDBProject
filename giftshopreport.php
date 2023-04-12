@@ -1,5 +1,13 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="reportstyle.css">
+    </head>
     <body>
         <?php
                 $servername = "34.30.147.150";
@@ -14,14 +22,18 @@
                 }
                 //$conn->close();
         ?>
-        <table>
+        <table style="width:100%">
             <tr>
-                <th rowspan="4">Giftshop Report</th>
+                <?php
+                    echo '<th colspan="4", style="background-color:#c9dbf7">Giftshop Report '.date("F Y").'</th>';
+                ?>
+                
             </tr>
             <?php
                 $sql = "SELECT * FROM GIFT_SHOP";
                 $result = $conn->query($sql);
                 $totalincome = 0;
+                $Products =  array();
     
                 if ($result->num_rows > 0)
                 {
@@ -32,43 +44,89 @@
                         $income = $row['Income_from_gift_shop'];
                         $amountsold = $income / $itemcost;
                         $amounttotal = $amount + ($amountsold);
-                        $totalincome = $totalincome + $income; 
-                        
+                        $totalincome = $totalincome + $income;
+
+                        $Products[$row['Product_name']] = $amountsold;
+
                         echo 
                         '
                         <tr>
                             <th>Product</th>
-                            <td>' .$row["Product_name"]. '<td>
+                            <td>' .$row["Product_name"]. '</td>
                             <th>Price</th>
                             <td>$' .$row["Item_Cost"]. '</td>    
                         </tr>
                         <tr>
                             <th>Product ID</th>
-                            <td>' .$row["Item_ID"]. '<td>
+                            <td>' .$row["Item_ID"]. '</td>
                             <th>Total Amount</th>
                             <td>' .$amounttotal. '</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td rowspan="2", colspan="2"></td>
                             <th>Amount Sold</th>
                             <td>' .$amountsold. '</td>
-                        </tr>
+                        </tr>   
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <th>Income From Item</th>
-                            <td>$' .$row["Income_from_gift_shop"]. '</td>
-                        </tr>
-                        ';
-
-                        echo
-                        '
-                        <tr>
-                            <td>Total Income: ' .$totalincome. '</td>
+                            <th style="background-color:#f0f0f0">Income From Item</th>
+                            <td style="background-color:#f0f0f0">$' .$row["Income_from_gift_shop"]. '</td>
                         </tr>
                         ';
                     }
+
+                    echo
+                    '
+                    <tr>
+                        <th colspan="3", style="background-color:#a4c3f3">Total Income</th>
+                        <td style="background-color:#a4c3f3">$' .$totalincome. '</td>
+                    </tr>
+                    ';
+                }
+
+                echo '<tr><th colspan="3">Top 3 Best Selling Items</th>';
+                arsort($Products);
+                $name = array_keys($Products);
+                $i = 0;
+                foreach($Products as $name => $amount)
+                {
+                    if ($i == 0)
+                    {
+                        echo '<td>1. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                    }
+                    else if ($i == 1)
+                    {
+                        echo '<tr><td colspan="3", rowspan="2"></td>';
+                        echo '<td>2. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                    }
+                    else
+                    {
+                        echo '<tr><td>3. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                        break;
+                    }
+                    ++$i;
+                }
+
+                echo '<tr><th colspan="3">Top 3 Worst Selling Items</th>';
+                krsort($Products);
+                $name = array_keys($Products);
+                $i = 0;
+                foreach($Products as $name => $amount)
+                {
+                    if ($i == 0)
+                    {
+                        echo '<td>1. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                    }
+                    else if ($i == 1)
+                    {
+                        echo '<tr><td colspan="3", rowspan="2"></td>';
+                        echo '<td>2. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                    }
+                    else
+                    {
+                        echo '<tr><td>3. ' .$name. ' (' .$amount. ' Items Sold)</td></tr>';
+                        break;
+                    }
+                    ++$i;
                 }
             ?>
         </table>    
