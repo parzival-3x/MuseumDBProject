@@ -47,7 +47,7 @@ if (isset($_SESSION['email'])) {
                             <!--Mailing/Billing Address-->
                             <label for="addressline1">Address (Line 1):</label>
                             <input type="text" name="addressline1" id="addressline1" autocomplete="on" required><br><br>
-                            <label for="addressline2">Address (Line 1):</label>
+                            <label for="addressline2">Address (Line 2):</label>
                             <input type="text" name="addressline2" id="addressline2" autocomplete="on"><br><br>
                             <label for="zip">Postal/Zip Code:</label>
                             <input type="text" name="zip" id="zip" placeholder="Ex: 77204"
