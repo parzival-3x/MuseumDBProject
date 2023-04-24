@@ -28,7 +28,7 @@ if (isset($_SESSION['email'])) {
   <body>
     <?php include 'header.php'; ?> 
     <h1>Hello, <?php echo $_SESSION['email']; ?></h1>
-    <p>Add artwork (done)</p>
+    <center><h3>Add artwork</h3></center>
     <form action="insert.php" method="post" enctype="multipart/form-data">
       <label for="Artwork_ID">Artwork ID:</label><!--Artwork_ID      | int          | NO -->
       <input type="text" id="Artwork_ID" name="Artwork_ID">
@@ -57,7 +57,8 @@ if (isset($_SESSION['email'])) {
       <input type="file"name="Picture" id="Picture">
       <button type="submit" name="updateArtwork">Update</button>
     </form>
-    <p>Add, edit, and delete calendar</p>
+    <hr>
+    <center><h3>Add to calendar</h3></center>
     <form action="insert.php" method="post">
       <label for="Event_Name">Add an event name:</label><!--Event_Name| varchar(100)| NO -->
       <input type="text" id="Event_Name" name="Event_Name">
@@ -69,12 +70,15 @@ if (isset($_SESSION['email'])) {
       <input type="text" id="Location_of_Event" name="Location_of_Event">
       <button type="submit" name="updateCalendar">Update</button>
     </form>
+    <hr>
+    <center><h3>Remove from calendar</h3></center>
     <form action="insert.php" method="post">
       <label for="Event_Name">Delete an event by giving its name:</label><!--Event_Name| varchar(100)| NO -->
       <input type="text" id="Event_Name" name="Event_Name">
       <button type="submit" name="deleteCalendar">Delete</button>
     </form>
-    <p>Add, edit, and delete exhibits</p>
+    <hr>
+    <center><h3>Add exhibit</h3></center>
     <form action="insert.php" method="post">
       <label for="Exhibit_ID">Exhibit ID:</label><!--Exhibit_ID| int| NO -->
       <input type="number" id="Exhibit_ID" name="Exhibit_ID" min="1" max="100">
@@ -95,7 +99,8 @@ if (isset($_SESSION['email'])) {
       <input type="number" id="Number_of_visits" name="Number_of_visits" min="1">
       <button type="submit" name="updateExhibits">Update</button>
     </form>
-    <p>Add, edit, and delete gift shop</p>
+    <hr>
+    <center><h3>Add to gift shop</h3></center>
     <form action="insert.php" method="post" enctype="multipart/form-data">
       <!--Item_ID| int| NO| PRI| NULL| auto_increment -->
       <label for="Product_amt">Number of items in stock:</label><!--Product_amt| int| NO -->
@@ -108,7 +113,8 @@ if (isset($_SESSION['email'])) {
       <input type="file"name="Picture" id="Picture">
       <button type="submit" name="updateGiftShop">Update</button>
     </form>
-    <p>Add, edit, and delete movies</p>
+    <hr>
+    <center><h3>Add movie</h3></center>
     <form action="insert.php" method="post" enctype="multipart/form-data">
       <label for="MovName">Enter movie name:</label><!--MovName| varchar(100)| NO -->
       <input type="text" id="MovName" name="MovName">
@@ -128,11 +134,44 @@ if (isset($_SESSION['email'])) {
       <input type="number" step="0.01" id="price" name="price">
       How many showtimes are there? <input type="number" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
       <div id="FormFields" style="margin: 20px 0px;"></div>
-      <button type="submit" name="updateMovies">Update</button>
+      <button type="submit" name="updateMovies">Update?</button>
     </form>
+
+
+
+    <hr>
+    <center><h3>Add, edit, and delete subscriptions</h3></center>
+    <form action="insert.php" method="post">
+      <label for="memname">Add a member name:</label><!--Member Name| varchar(50)| NO -->
+      <input type="text" id="memname" name="memname">
+      <label for="expdate">Select the expiration date:</label><!--Exp Date| date| YES -->
+      <input type="date" id="expdate" name="expdate" value="">
+      <input type="radio" id="Active" name="memstatus" value="Active">
+      <label for="Active">Active</label><br>
+      <input type="radio" id="Expired" name="memstatus" value="Expired">
+      <label for="Expired">Expired</label><br>
+      <label for="mememail">Set the Email Address</label><!--Recipient Email| varchar(200)| NO -->
+      <input type="text" id="mememail" name="mememail">
+      <button type="submit" name="updateSubscriptions">Update</button>
+    </form>
+    <form action="insert.php" method="post">
+      <label for="memid">Delete a subscription by giving its id:</label><!--member_id| int| NO -->
+      <input type="number" id="memid" name="memid" min="1">
+      <button type="submit" name="deleteSubscriptions">Delete</button>
+    </form>
+    <hr>
+
+
+
+    <center><h2>
     <a href="reportincome.php">Make an income report</a><br/>
     <a href="AgeReport.php">Make a visitor report</a><br/>
-    <a href="giftshopreport.php">Make a gift shop report</a>
+    <a href="giftshopreport.php">Make a gift shop report</a><br/>
+    <a href="alertDisplay.php">Display Alerts</a><br/>
+    <a href="subscriptionsDisplay.php">Display Subscriptions</a><br/>
+    <a href="emailDisplay.php">Display Emails</a>
+    </h2></center>
+
     <p></p>
     <p></p>
     <footer>

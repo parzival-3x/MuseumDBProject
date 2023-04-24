@@ -1,14 +1,11 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-		<?php
-		
+  ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
+  session_start();  
+}		
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
-  $link_href = 'visitor.php';
+  $link_href = (str_contains($_SESSION['email'], '@mfah.org') ? 'manager.php': 'visitor.php');
 } else {
   $link_text = 'Login';
   $link_href = 'loginp.php';
@@ -35,7 +32,6 @@ if (isset($_SESSION['email'])) {
                     $rows = "";
                     while ($row = mysqli_fetch_assoc($result)) {
                         $rows .= "<tr>";
-                        $rows .= "<td>" . $row["Item_ID"] . "</td>";
                         $rows .= "<td><img src ='gifticons/" . $row["Product_name"] . ".png'></td>";
                         $rows .= "<td>" . $row["Product_name"] . "</td>";
                         $rows .= "<td>" . $row["Product_amt"] . "</td>";
@@ -44,7 +40,7 @@ if (isset($_SESSION['email'])) {
                         $rows .= "</tr>";
                     }
 
-                    $table = "<table><thead><tr><th>Item ID</th><th>Image</th><th>Product Name</th><th>Product Amount</th><th>Item Cost</th><th>Purchase</th></tr></thead><tbody>" . $rows . "</tbody></table>";
+                    $table = "<table><thead><tr><th>Image</th><th>Product Name</th><th>Product Amount</th><th>Item Cost</th><th>Purchase</th></tr></thead><tbody>" . $rows . "</tbody></table>";
 
                     print($table);
 

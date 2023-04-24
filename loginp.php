@@ -184,13 +184,13 @@ footer img {
                   <a class="nav-link" href="restaurants.php">Restaraunt</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Contact Us Page/index.html ">Contact us</a>
+                  <a class="nav-link" href="Contact Us Page/index.html">Contact us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="visitus.php">Visit us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
+                  <a class="nav-link" href="Parking Page/index.php">Parking Pass</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="loginp.php">Login</a>

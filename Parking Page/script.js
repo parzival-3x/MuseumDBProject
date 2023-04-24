@@ -8,6 +8,7 @@ const emailInput = document.getElementById('email-input');
 const cardNumberInput = document.getElementById('card-number-input');
 const expiryInput = document.getElementById('expiry-input');
 const cvvInput = document.getElementById('cvv-input');
+const licensePlateInput = document.getElementById('license-plate-input');
 
 const hourlyRates = {
   'zone-a': 15,
@@ -32,6 +33,7 @@ paymentForm.addEventListener('submit', function(event) {
   const rate = hourlyRates[zoneSelect.value];
   const total = hours * rate;
   const email = emailInput.value;
+  const licensePlate = licensePlateInput.value;
   alert(`Thank you for your payment of $${total.toFixed(2)}. An email has been sent to ${email} with your parking pass.`);
   paymentForm.reset();
   paymentSection.classList.add('hidden');

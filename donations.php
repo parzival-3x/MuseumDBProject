@@ -76,6 +76,7 @@ if (isset($_SESSION['email'])) {
                     </fieldset>
                 </form>
             </div>
+            
         </main>
         <footer>
     <div class="social-media">

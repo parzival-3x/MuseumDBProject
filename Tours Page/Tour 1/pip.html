@@ -15,7 +15,6 @@
             <img src="/img/MFAHlogo.png" height="110" alt="logo">
         </button>
         </a>
-
         <div class="column">
         <nav class="navbar">
             <div class="help" id="navbarNav">
@@ -24,7 +23,7 @@
                 <a class="nav-link" href="../../index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Tickets</a>
+                <a class="nav-link" href="../../Tickets Page/index.php">Tickets</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="../../exhibits.php">Exhibits</a>
@@ -54,7 +53,7 @@
                 <a class="nav-link" href="../../visitus.php">Visit us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../Parking Page/index.html">Parking Pass</a>
+                  <a class="nav-link" href="../../Parking Page/index.php">Parking Pass</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="../../loginp.php">Log in</a>
@@ -66,11 +65,6 @@
     </div>
 </header>
 <main>
-  <div style="width:100%">
-    <h1>Pipilotti Rist: Pixel Forest and Worry Will Vanish</h1>
-    <center><small class="date-block">Through September 4, 2023</small></center><hr>
-  </div>
-  </div>
     <section class="info">
         <p><strong><em>&bull; Pixel Forest</em></strong> comprises 3,000 LED lights encased in resin spheres and suspended from the ceiling on cables. Each light is controlled by a signal so that the &ldquo;forest&rdquo; is constantly changing. Visitors can stroll throughout this environment, which Rist describes as &ldquo;a digital image that has exploded in space.&rdquo;</p>
         <p><strong><em>&bull; Worry Will Vanish</em></strong> takes viewers into a fantastic dreamscape where the body and nature become one. The video footage is immediately enchanting, and the soundtrack heightens the aura of wonderstruck celebration. Visitors are invited to recline on pillows and lose themselves in Rist&rsquo;s cosmos.</p>
@@ -79,6 +73,9 @@
     <form id="ticket-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
+      <br>
+      <label for="type">Type:</label>
+      <input type="text" id="type" name="type" value="Tour" readonly>
       <br>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
@@ -122,12 +119,13 @@
       <br>
       <label for="total-price">Total Price:</label>
       <span id="total-price"></span>
+      <input type="hidden" id="hidden-price" name="price">
       <br>
       <button type="submit">Purchase</button>
     </form>
     <p><strong>Museum Hours:</strong> Open Wednesday through Sunday, 11:00 AM to 8:00 PM. Closed on Monday and Tuesday.</p>
+    <div id="purchase-message" class="purchase-message" style="display:none;">Tickets have been purchased successfully!</div>
     <script src="script.js"></script>
-    
 </main>
 <hr/>
   <footer>
@@ -143,6 +141,7 @@
         <a href="https://vimeo.com/mfahouston">
           <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vimeo-512.png" alt="Vimeo"/></a>
       </p>
+      <p>Copyright &copy; 2023, The Museum of Fine Arts Houston. All rights reserved.</p>
     </div>
   </footer>
 </body>

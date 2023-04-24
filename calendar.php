@@ -1,14 +1,11 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-		<?php
-		
+  ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
+  session_start();  
+}		
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
-  $link_href = 'visitor.php';
+  $link_href = (str_contains($_SESSION['email'], '@mfah.org') ? 'manager.php': 'visitor.php');
 } else {
   $link_text = 'Login';
   $link_href = 'loginp.php';

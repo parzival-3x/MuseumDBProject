@@ -2,14 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
   ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../sessions'));
   session_start();  
-}
-?>
-
-		<?php
-		
+}		
 if (isset($_SESSION['email'])) {
   $link_text = 'My Account';
-  $link_href = 'visitor.php';
+  $link_href = (str_contains($_SESSION['email'], '@mfah.org') ? 'manager.php': 'visitor.php');
 } else {
   $link_text = 'Login';
   $link_href = 'loginp.php';
@@ -69,7 +65,7 @@ if (isset($_SESSION['email'])) {
                 <a class="nav-link" href="visitus.php">Visit us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Parking Page/index.html">Parking Pass</a>
+                <a class="nav-link" href="Parking Page/index.php">Parking Pass</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo $link_href; ?>"><?php echo $link_text; ?></a>
