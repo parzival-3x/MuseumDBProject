@@ -130,9 +130,38 @@ if (isset($_SESSION['email'])) {
       <div id="FormFields" style="margin: 20px 0px;"></div>
       <button type="submit" name="updateMovies">Update</button>
     </form>
+
+
+
+    <p>Add, edit, and delete subscriptions</p>
+    <form action="insert.php" method="post">
+      <label for="memname">Add a member name:</label><!--Member Name| varchar(50)| NO -->
+      <input type="text" id="memname" name="memname">
+      <label for="expdate">Select the expiration date:</label><!--Exp Date| date| YES -->
+      <input type="date" id="expdate" name="expdate" value="">
+      <input type="radio" id="Active" name="memstatus" value="Active">
+      <label for="Active">Active</label><br>
+      <input type="radio" id="Expired" name="memstatus" value="Expired">
+      <label for="Expired">Expired</label><br>
+      <label for="mememail">Set the Email Address</label><!--Recipient Email| varchar(200)| NO -->
+      <input type="text" id="mememail" name="mememail">
+      <button type="submit" name="updateSubscriptions">Update</button>
+    </form>
+    <form action="insert.php" method="post">
+      <label for="memid">Delete a subscription by giving its id:</label><!--member_id| int| NO -->
+      <input type="number" id="memid" name="memid" min="1">
+      <button type="submit" name="deleteSubscriptions">Delete</button>
+    </form>
+
+
+
     <a href="reportincome.php">Make an income report</a><br/>
     <a href="AgeReport.php">Make a visitor report</a><br/>
-    <a href="giftshopreport.php">Make a gift shop report</a>
+    <a href="giftshopreport.php">Make a gift shop report</a><br/>
+    <a href="alertDisplay.php">Display Alerts</a><br/>
+    <a href="subscriptionsDisplay.php">Display Subscriptions</a><br/>
+    <a href="emailDisplay.php">Display Emails</a>
+
     <p></p>
     <p></p>
     <footer>

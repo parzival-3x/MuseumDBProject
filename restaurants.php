@@ -91,7 +91,7 @@ if (isset($_SESSION['email'])) {
                 die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = 'SELECT Restaurant_name, Hours_of_service FROM RESTAURANT';//RESTAURANT
+                $sql = 'SELECT Restaurant_name, Hours_of_service FROM RESTAURANT WHERE date = "2023-04-01"';//RESTAURANT
                 $result =  $conn->query($sql);
                 $rest = $result->fetch_all(MYSQLI_ASSOC);
                 if (count($rest) > 0)
