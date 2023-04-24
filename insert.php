@@ -172,4 +172,31 @@ if(isset($_POST['updateMovies'])){
     }
     }
   }
+
+  if(isset($_POST['updateSubscriptions'])){
+    $memname = $_POST['memname'];
+    $expdate = $_POST['expdate'];
+    $memstatus = $_POST['memstatus'];
+    $mememail = $_POST['mememail'];
+    $calendarinsert = "INSERT INTO SUBSCRIPTIONS (expiration_date, member_name, subscription_status, email)
+    VALUES('$expdate', '$memname', '$memstatus', '$mememail')";
+    $sendit = mysqli_query($con,$calendarinsert);
+    if(!$sendit){
+      echo "Calendar query error: ". mysqli_error($con);
+    }
+    else{
+      echo "sucessfully sent!";
+    }
+}
+if(isset($_POST['deleteSubscriptions'])){
+  $idtodelete = $_POST['memid'];
+  $deletecom = "DELETE FROM SUBSCRIPTIONS WHERE member_id = '$idtodelete'";
+  $gone = mysqli_query($con,$deletecom);
+  if(!$gone){
+    echo "subscription deletion error: ". mysqli_error($con);
+  }
+  else{
+    echo "successfully gone";
+  }
+}
 ?>
